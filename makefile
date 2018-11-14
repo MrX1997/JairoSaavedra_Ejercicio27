@@ -1,10 +1,7 @@
-EXECS=mpi_hello_world
-MPICC?=mpicc
+#EXECS=mpi_hello_world
+#MPICC?=mpicc
 
-all: ${EXECS}
+sample: mpi_hello_world.c
+	mpic++ -o sample sample.cpp
+	./sample 500 0 1
 
-mpi_hello_world: mpi_hello_world.c
-	${MPICC} -o mpi_hello_world mpi_hello_world.c
-
-clean:
-	rm -f ${EXECS}
